@@ -25,9 +25,6 @@ export default function SignUp({ navigation }: Props) {
         <View style={styles.main}>
             <View style={styles.container}>
                 <View style={styles.company}>
-                    {/* <View style={styles.signupLogo}>
-                        <Image source={require('../../assets/SignUp/dialImage.png')} style={styles.signupLogoIcon} />
-                    </View> */}
                     <LinearGradient colors={['#00F0B2', '#01DEE2']} style={styles.signupLogo}>
                         <Image source={require('../../assets/SignUp/dialImage.png')} style={styles.signupLogoIcon} />
                     </LinearGradient>
