@@ -1,20 +1,35 @@
+import React,{useEffect,useCallback} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import SignUp from './Screens/Signup/SignUp';
+import SignUpForm from './Screens/Signup/SignUpForm';
+import LoginEmail from './Screens/Login/LoginEmail';
+import Main from './Screens/Main/Main';
+
+export type RootStackParamList = {
+  SignUp: undefined,
+  SignUpForm: undefined;
+  LoginEmail: undefined,
+  Main:undefined,
+};
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{
+          headerShown: false
+        }}>
+          
+          <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="SignUpForm" component={SignUpForm} />
+          <Stack.Screen name="LoginEmail" component={LoginEmail} />
+          <Stack.Screen name="Main" component={Main} />
+        </Stack.Navigator>
+      </NavigationContainer>
+   
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
