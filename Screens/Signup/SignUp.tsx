@@ -5,6 +5,7 @@ import AlreadyAccount from '../../Components/AlreadyAccount/AlreadyAccount';
 import { RootStackParamList } from '../../App';
 import EmailWarning from '../../Components/EmailWarning/EmailWarning';
 import { LinearGradient } from 'expo-linear-gradient';
+import CarouselCards from '../../Components/Carousel/CarouselCards';
 type ProfileScreenNavigationProp = StackNavigationProp<
     RootStackParamList,
     'SignUp'
@@ -24,18 +25,7 @@ export default function SignUp({ navigation }: Props) {
     return (
         <View style={styles.main}>
             <View style={styles.container}>
-                <View style={styles.company}>
-                    <LinearGradient colors={['#00F0B2', '#01DEE2']} style={styles.signupLogo}>
-                        <Image source={require('../../assets/SignUp/dialImage.png')} style={styles.signupLogoIcon} />
-                    </LinearGradient>
-                </View>
-                <View style={styles.company}>
-                    <Text style={styles.welcomeText}>Phone system for </Text>
-                    <Text style={styles.welcomeText}>modern businesses</Text>
-                </View>
-                <View style={styles.space}>
-
-                </View>
+                <CarouselCards/>
                 <View style={styles.company}>
                     <TouchableOpacity style={styles.loginButton} onPress={handleSignUp}>
                         <Text style={styles.loginButtonText}>Create an account</Text>
@@ -46,9 +36,6 @@ export default function SignUp({ navigation }: Props) {
                         <Image source={require('../../assets/SignUp/logo.png')} style={styles.googleIcon} />
                         <Text>Sign up with Google</Text>
                     </TouchableOpacity>
-                </View>
-                <View style={styles.extra}>
-
                 </View>
                 <AlreadyAccount value={"I already have a Awesome Dial account"} screen={"LoginEmail"} />
                 {/* <View style={styles.companyWarning}>

@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     },
     welcomeText: {
         color: "#33475B",
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: "bold",
     },
 

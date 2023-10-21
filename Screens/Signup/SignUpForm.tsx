@@ -1,108 +1,123 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, StatusBar, Text, View, Image, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import AlreadyAccount from '../../Components/AlreadyAccount/AlreadyAccount';
 import EmailWarning from '../../Components/EmailWarning/EmailWarning';
 import WelcomeText from '../../Components/WelcomeText/WelcomeText';
+import { LinearGradient } from 'expo-linear-gradient';
+
 export default function SignUpForm() {
     return (
         <View style={styles.main}>
+            {/* <StatusBar backgroundColor="#fff" barStyle="dark-content" /> */}
             <View style={styles.cornerUnit}>
-                <Image source={require('../../assets/SignUp/Vector.png')} style={styles.cornerImage} />
-            </View>
-            <WelcomeText text1={"Create Your"} text2={"Awesome Dial account"}/>
-            <View style={styles.company}>
-                <TextInput
-                    style={styles.inputStyles}
-                    mode='outlined'
-                    label={<Text style={styles.labelStyle}>{"First Name"}</Text>}
-                    outlineStyle={{ borderColor: "#D6DFE8" }}
-                    left={<TextInput.Icon icon="account"  />}
-                />
-            </View>
-            <View style={styles.company}>
-                <TextInput
-                    style={styles.inputStyles}
-                    mode='outlined'
-                    label={<Text style={styles.labelStyle}>{"Last Name"}</Text>}
-                    outlineStyle={{ borderColor: "#D6DFE8" }}
-                    left={<TextInput.Icon icon="account" />}
-                />
-            </View>
-            <View style={styles.company}>
-                <TextInput
-                    style={styles.inputStyles}
-                    mode='outlined'
-                    label={<Text style={styles.labelStyle}>{"Email"}</Text>}
-                    outlineStyle={{ borderColor: "#D6DFE8" }}
-                    left={<TextInput.Icon icon="email"  />}
-                />
-            </View>
-            <View style={styles.company}>
-                <TextInput
-                    style={styles.inputStyles}
-                    mode='outlined'
-                    label={<Text style={styles.labelStyle}>{"Company"}</Text>}
-                    outlineStyle={{ borderColor: "#D6DFE8" }}
-                    left={<TextInput.Icon icon="account" />}
-                />
-            </View>
-            <View style={styles.company}>
-                <TextInput
-                    style={styles.inputStyles}
-                    mode='outlined'
-                    label={<Text style={styles.labelStyle}>{"Phone"}</Text>}
-                    outlineStyle={{ borderColor: "#D6DFE8" }}
-                    left={<TextInput.Icon icon="phone"  />}
-                />
-            </View>
-            <View style={styles.company}>
-                <TextInput
-                    style={styles.inputStyles}
-                    mode='outlined'
-                    label={<Text style={styles.labelStyle}>{"Password"}</Text>}
-                    outlineStyle={{ borderColor: "#D6DFE8" }}
-                    left={<TextInput.Icon icon="key"  />}
-                />
-            </View>
-            <View style={styles.company}>
-                <TouchableOpacity style={styles.loginButton}>
-                    <Text style={styles.loginButtonText}>Create an account</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.extra}>
+                <LinearGradient colors={['#00F0B2', '#01DEE2']} style={styles.signupLogo}>
 
+                </LinearGradient>
+            </View>
+            <View style={styles.container}>
+                <WelcomeText text1={"Create Your"} text2={"Awesome Dial account"} />
+                <View style={styles.company}>
+                    <TextInput
+                        style={styles.inputStyles}
+                        mode='outlined'
+                        label={<Text style={styles.labelStyle}>{"First Name"}</Text>}
+                        outlineStyle={{ borderColor: "#D6DFE8" }}
+                        left={<TextInput.Icon icon="account" />}
+                    />
                 </View>
-            <AlreadyAccount value={"I already have a Awesome Dial account"} screen={"LoginEmail"}/>
-            {/* <EmailWarning /> */}
+                <View style={styles.company}>
+                    <TextInput
+                        style={styles.inputStyles}
+                        mode='outlined'
+                        label={<Text style={styles.labelStyle}>{"Last Name"}</Text>}
+                        outlineStyle={{ borderColor: "#D6DFE8" }}
+                        left={<TextInput.Icon icon="account" />}
+                    />
+                </View>
+                <View style={styles.company}>
+                    <TextInput
+                        style={styles.inputStyles}
+                        mode='outlined'
+                        label={<Text style={styles.labelStyle}>{"Email"}</Text>}
+                        outlineStyle={{ borderColor: "#D6DFE8" }}
+                        left={<TextInput.Icon icon="email" />}
+                    />
+                </View>
+                <View style={styles.company}>
+                    <TextInput
+                        style={styles.inputStyles}
+                        mode='outlined'
+                        label={<Text style={styles.labelStyle}>{"Company"}</Text>}
+                        outlineStyle={{ borderColor: "#D6DFE8" }}
+                        left={<TextInput.Icon icon="account" />}
+                    />
+                </View>
+                <View style={styles.company}>
+                    <TextInput
+                        style={styles.inputStyles}
+                        mode='outlined'
+                        label={<Text style={styles.labelStyle}>{"Phone"}</Text>}
+                        outlineStyle={{ borderColor: "#D6DFE8" }}
+                        left={<TextInput.Icon icon="phone" />}
+                    />
+                </View>
+                <View style={styles.company}>
+                    <TextInput
+                        style={styles.inputStyles}
+                        mode='outlined'
+                        label={<Text style={styles.labelStyle}>{"Password"}</Text>}
+                        outlineStyle={{ borderColor: "#D6DFE8" }}
+                        left={<TextInput.Icon icon="key" />}
+                    />
+                </View>
+                <View style={styles.company}>
+                    <TouchableOpacity style={styles.loginButton}>
+                        <Text style={styles.loginButtonText}>Create an account</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <AlreadyAccount value={"I already have a Awesome Dial account"} screen={"LoginEmail"} />
+                {/* <EmailWarning /> */}
+                <View style={styles.extra}>
+                    <EmailWarning />
+                </View>
+
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     main: {
-       flex:1,
+        flex: 1,
         backgroundColor: '#fff',
         alignItems: 'flex-start',
         justifyContent: 'center',
         position: 'relative',
-        padding: 20,
-        paddingLeft: 30,
-        paddingRight: 30,
-       paddingTop:60,
+
     },
     container: {
         width: "100%",
         position: "relative",
-        
+        padding: 20,
+        paddingLeft: 30,
+        paddingRight: 30,
+        top: -30,
+
     },
-    extra:{
-        marginTop:20,
-       },
+    extra: {
+        width:"100%",
+        position:"absolute",
+        alignContent:"center",
+        bottom:-20,
+        left:30
+    },
+
     cornerUnit: {
-        position: "absolute",
-        height: 100,
-        width: 100,
+        position: "relative",
+        height: 60,
+        width: 80,
         backgroundColor: "linear-gradient(136deg, #00F0B2 15.82%, #01DEE2 85.18%);",
         top: 0,
         left: 0,
@@ -110,6 +125,14 @@ const styles = StyleSheet.create({
     cornerImage: {
         width: "100%",
         height: "100%",
+    },
+    signupLogo: {
+        width: 220,
+        height: 220,
+        borderRadius: 110,
+        position: "relative",
+        top: -130,
+        left: -110,
     },
     company: {
         width: "100%",
@@ -122,7 +145,7 @@ const styles = StyleSheet.create({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        marginBottom:30,
+        marginBottom: 30,
     },
     welcomeText: {
         color: "#33475B",
